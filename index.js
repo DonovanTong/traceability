@@ -19,7 +19,13 @@ rollbar.log('Hello world!')
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
-
+app.post('/', (req, res) => {
+  try {
+    ;lkja;lskjf
+  } catch {
+    rollbar.log('Hi again')
+  }
+})
 
 const port = process.env.PORT || 4800
 
