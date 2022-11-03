@@ -6,8 +6,8 @@ require('dotenv').config()
 app.use(express.json())
 
 // include and initialize the rollbar library with your access token
-var Rollbar = require('rollbar')
-var rollbar = new Rollbar({
+let Rollbar = require('rollbar')
+let rollbar = new Rollbar({
   accessToken: process.env.ROLLBAR_TOKEN,
   captureUncaught: true,
   captureUnhandledRejections: true,
@@ -20,12 +20,13 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
 
-app.post('/#', (req, res) => {
+app.get('/', (req, res) => {
   try {
     asdfasdf()
   } catch {
     rollbar.log('Hi again')
   }
+  rollbar.critical('uh oh')
 })
 
 const port = process.env.PORT || 4800
