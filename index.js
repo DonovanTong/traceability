@@ -19,7 +19,8 @@ rollbar.log('Hello world!')
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
-app.get('/', (req, res) => {
+
+app.post('/#', (req, res) => {
   try {
     asdfasdf()
   } catch {
