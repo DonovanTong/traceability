@@ -15,3 +15,7 @@ var rollbar = new Rollbar({
 
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
+
+const port = process.env.PORT || 4800
+
+app.listen(port, () => console.log(`Server listening on ${port}`))
