@@ -20,13 +20,14 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
 
-app.get('/', (req, res) => {
+app.get('/#overview', (req, res) => {
   try {
     asdfasdf()
   } catch {
     rollbar.log('Hi again')
   }
   rollbar.critical('uh oh')
+  res.status(200).send('nice')
 })
 
 const port = process.env.PORT || 4800
